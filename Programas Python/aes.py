@@ -545,5 +545,4 @@ def decrypt(key, ciphertext, workload=100000):
 #         write(decrypt(sys.argv[2], text))
 #     else:
 #         print('Expected command "encrypt" or "decrypt" in first argument.')
-
-# encrypt('my secret key', b'0' * 1000000) # 1 MB encrypted in 20 seconds.
+encrypt('my secret key', b'0' * 1000000) # 1 MB encrypted in 20 seconds.
