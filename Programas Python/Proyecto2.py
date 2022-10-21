@@ -1,6 +1,7 @@
 import os
 import time
 import rsa
+import des 
 
 while True:
 
@@ -47,10 +48,13 @@ while True:
             print('op2')
         elif opc == 2: 
             os.system('cls')
-            print('op2')
+            texto = str(input("Ingrese el texto a cifrar: "))
+            cifrado = des.cifra_des(texto)
+            print("El texto cifrado es: ", cifrado)
+            time.sleep(1)
         elif opc == 3: 
             os.system('cls')
-            
+
         elif opc == 4: 
             os.system('cls')
             print('op2')
@@ -95,7 +99,10 @@ while True:
             print('op2')
         elif opd == 2: 
             os.system('cls')
-            print('op2')
+            texto = str(input("Ingrese el texto a descifrar: "))
+            descifrado = des.descifra_des(texto)
+            print("El texto descifrado es: ", descifrado)
+            time.sleep(1)
         elif opd == 3: 
             os.system('cls')
             

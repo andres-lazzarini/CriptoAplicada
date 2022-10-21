@@ -1,7 +1,5 @@
 import numpy as np
 
-texto = "HolaMund"
-
 def cifra_des(texto):
 
     splitat = 4
@@ -63,9 +61,3 @@ def descifra_des(texto):
 
     descifrado = l + r
     return descifrado
-
-cifrado = cifra_des(texto)
-print(cifrado)
-
-descifrado = descifra_des(cifrado)
-print(descifrado)
