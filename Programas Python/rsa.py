@@ -103,6 +103,6 @@ def descifra_RSA(cifrado, n, d):
   print('El texto descifrado es: ', descifrado)
   return descifrado
 
-e, n, d = Claves_RSA()
-cifrado = cifra_RSA('El texto a cifrar', n, e)
-descifrado = descifra_RSA(cifrado, n, d)
+# e, n, d = Claves_RSA()
+# cifrado = cifra_RSA('El texto a cifrar', n, e)
+# descifrado = descifra_RSA(cifrado, n, d)
