@@ -1,7 +1,6 @@
 import os
 import time
 import rsa
-
 while True:
 
     print('------------------------------------------------------')
