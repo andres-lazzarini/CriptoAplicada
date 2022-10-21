@@ -49,7 +49,13 @@ while True:
             print('op2')
         elif opc == 3: 
             os.system('cls')
-            print('op2')
+            men = input("DIgite mensaje a encriptar: ")
+            key = input("\nDigite la llave: ")
+            salida = aes.encrypt(key, men)
+            print("\n\nMensaje encriptado: ", salida)
+            sal = salida.decode(encoding='UTF-8',errors='ignore')
+            print("Mensaje encriptado: ",sal)
+            input("")
         elif opc == 4: 
             os.system('cls')
             print('op2')
@@ -97,7 +103,12 @@ while True:
             print('op2')
         elif opd == 3: 
             os.system('cls')
-            print('op2')
+            men = input("DIgite mensaje a desencriptar ")
+            key = input("\nDigite la llave: ")
+            salida = aes.decrypt(key, men)
+            input("")
+            print("Mensaje desencriptado: ", salida)
+            input("")
         elif opd == 4: 
             os.system('cls')
             print('op2')
