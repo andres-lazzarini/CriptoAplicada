@@ -1,4 +1,3 @@
-import random
 from random import randint
 
 def difie_helman():
@@ -11,14 +10,14 @@ def difie_helman():
 	print('El valor de G es :%d'%(G))
 	
 	# Se declara a con valor random y se imprime
-	a = random.randint(1, P - 1)
+	a = randint(1, P - 1)
 	print('La llave privada de Alice es :%d'%(a))
 
 	# Calculo de A = g^a mod p
 	Ax = int(pow(G,a,P))
 	
 	# Se declara b con valor random y se imprime
-	b = random.randint(1, P - 1)
+	b = randint(1, P - 1)
 	print('La llave privada de Bob es :%d'%(b))
 
 	# Calculo de B= g^b mod p

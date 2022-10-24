@@ -1,4 +1,3 @@
-import random
 import math
 import numpy as np
 from random import randint
@@ -14,8 +13,8 @@ def isPrime(n):
 
 def Claves_RSA():
   ## Se buscan dos números p y q, diferentes y que sean primos
-  mi = 151
-  ma = 293
+  mi = 10
+  ma = 100
   val = False
   while val == False:
     p = randint(mi,ma)
@@ -74,7 +73,7 @@ def cifra_RSA(texto, n, e):
   
   cifrado = ""
   for i in np.arange(len(c1)):
-    cifrado = cifrado + chr(int(c1[i]))
+    cifrado += chr(int(c1[i]))
   
   print('El texto cifrado es: ', cifrado)
   return cifrado
@@ -104,5 +103,5 @@ def descifra_RSA(cifrado, n, d):
   return descifrado
 
 # e, n, d = Claves_RSA()
-# cifrado = cifra_RSA('Hey que pedo', n, e)
+# cifrado = cifra_RSA('Este es el mensaje no tiene que ser pedo', n, e)
 # descifrado = descifra_RSA(cifrado, n, d)
