@@ -104,5 +104,5 @@ def descifra_RSA(cifrado, n, d):
   return descifrado
 
 # e, n, d = Claves_RSA()
-# cifrado = cifra_RSA('El texto a cifrar', n, e)
+# cifrado = cifra_RSA('Hey que pedo', n, e)
 # descifrado = descifra_RSA(cifrado, n, d)

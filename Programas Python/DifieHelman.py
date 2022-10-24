@@ -1,7 +1,7 @@
 import random
 from random import randint
 
-if __name__ == '__main__':
+def difie_helman():
 
 	P = int (input('Ingrese el valor de P: '))
 	G = int (input('Ingrese el valor de G:'))

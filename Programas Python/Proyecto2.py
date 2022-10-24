@@ -6,6 +6,9 @@ import rc4
 import aes
 import ElGamal
 import random
+import Chacha
+import Salsa
+import DifieHelman
 
 while True:
 
@@ -63,16 +66,26 @@ while True:
         elif opc == 3: 
             os.system('cls')
             men = input("DIgite mensaje a encriptar: ")
-            key = input("\nDigite la llave: ")
-            salida = aes.encrypt(key, men)
-            print("\n\nMensaje encriptado: ", salida)
+            llave = input("\nDigite la llave: ")
+            mencifrado = aes.encrypt(llave, men)
+            print("\n\nMensaje encriptado: ", mencifrado)
             time.sleep(1)
         elif opc == 4: 
             os.system('cls')
-            print('op2')
+            texto = input("Ingrese un texto: ")
+            cifrado, key, nonce = Chacha.cifra_chacha(texto)
+            print("El texto cifrado es: ", cifrado)
+            print("El texto key es: ", key)
+            print("El texto nonce es: ", nonce)
+            time.sleep(1)
         elif opc == 5: 
             os.system('cls')
-            print('op2')
+            texto = input("Ingrese un texto: ")
+            scifrado, skey, snonce = Salsa.cifra_salsa(texto)
+            print("El texto cifrado es: ", scifrado)
+            print("El texto key es: ", skey)
+            print("El texto nonce es: ", snonce)
+            time.sleep(1)
         elif opc == 6: 
             os.system('cls')
             e, n, d = rsa.Claves_RSA()
@@ -94,7 +107,7 @@ while True:
             time.sleep(1)
         elif opc == 8: 
             os.system('cls')
-            exec(open("DifieHelman.py").read())
+            DifieHelman.difie_helman()
             time.sleep(1)
         else: 
             os.system('cls')
@@ -121,7 +134,7 @@ while True:
             cmsg = input("Ingrese un mensaje: ")
             clave = input("Ingrese una clave: ")
             descifrado = rc4.descifra_rc4(cmsg, clave)
-            print(descifrado)
+            print("El mensaje descifrado es: ", descifrado)
             time.sleep(1)
         elif opd == 2: 
             os.system('cls')
@@ -131,17 +144,25 @@ while True:
             time.sleep(1)
         elif opd == 3: 
             os.system('cls')
-            mencifrado = str(input("DIgite mensaje a descifrar: "))
-            key = input("\nDigite la llave: ")
-            exit = aes.decrypt(key, mencifrado)
-            print("Mensaje desencriptado: ", exit)
+            menCifrado = str(input("DIgite mensaje a descifrar: "))
+            llave = input("\nDigite la llave: ")
+            mendescifrado = aes.decrypt(llave, mencifrado)
+            print("Mensaje desencriptado: ", mendescifrado)
             time.sleep(1)
         elif opd == 4: 
             os.system('cls')
-            print('op2')
+            Cifrado = input("Ingrese el texto cifrado: ")
+            Key = input("Ingrese el key: ")
+            Nonce = input("Ingrese el Nonce: ")
+            Chacha.decifra_chacha(key, nonce, cifrado)
+            time.sleep(1)
         elif opd == 5: 
             os.system('cls')
-            print('op2')
+            Scifrado = input("Ingrese el texto cifrado: ")
+            Skey = input("Ingrese el key: ")
+            Snonce = input("Ingrese el Nonce: ")
+            Salsa.descifra_salsa(skey, snonce, scifrado)
+            time.sleep(1)
         elif opd == 6: 
             os.system('cls')
             textoc = str(input('Ingrese el texto a descifrar: '))
