@@ -3,6 +3,7 @@ import time
 import rsa
 import des 
 import rc4
+import aes
 
 while True:
 
@@ -59,7 +60,11 @@ while True:
             time.sleep(1)
         elif opc == 3: 
             os.system('cls')
-
+            men = input("DIgite mensaje a encriptar: ")
+            key = input("\nDigite la llave: ")
+            salida = aes.encrypt(key, men)
+            print("\n\nMensaje encriptado: ", salida)
+            time.sleep(1)
         elif opc == 4: 
             os.system('cls')
             print('op2')
@@ -114,7 +119,11 @@ while True:
             time.sleep(1)
         elif opd == 3: 
             os.system('cls')
-            
+            men = str(input("DIgite mensaje a desencriptar "))
+            xd = input("\nDigite la llave: ")
+            salida = aes.decrypt(xd, men)
+            print("Mensaje desencriptado: ", salida)
+            time.sleep(1)
         elif opd == 4: 
             os.system('cls')
             print('op2')
