@@ -481,7 +481,7 @@ def encrypt(key, plaintext, workload=100000):
     assert len(hmac) == HMAC_SIZE
 
     return hmac + salt + ciphertext
-    #return ciphertext
+    # return ciphertext
 
 
 def decrypt(key, ciphertext, workload=100000):
@@ -491,6 +491,7 @@ def decrypt(key, ciphertext, workload=100000):
 
     The exact algorithm is specified in the module docstring.
     """
+
     while len(ciphertext)% 16 != 0:
         ciphertext = ciphertext + " "
 

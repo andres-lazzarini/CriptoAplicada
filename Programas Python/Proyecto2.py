@@ -4,6 +4,8 @@ import rsa
 import des 
 import rc4
 import aes
+import ElGamal
+import random
 
 while True:
 
@@ -79,7 +81,17 @@ while True:
             time.sleep(1)
         elif opc == 7: 
             os.system('cls')
-            print('op2')
+            msg = input("Ingrese un mensaje: ")
+            q = random.randint(pow(10, 20), pow(10, 50))
+            print("q: ",q)
+            g = random.randint(2, q)
+            key = ElGamal.gen_key(q)
+            print("Key: ",key)
+            h = ElGamal.power(g, key, q)
+            ct, p = ElGamal.encryption(msg, q, h, g)
+            print("Mensaje encriptado: ", ct)
+            print("P: ",p)
+            time.sleep(1)
         elif opc == 8: 
             os.system('cls')
             exec(open("DifieHelman.py").read())
@@ -119,10 +131,10 @@ while True:
             time.sleep(1)
         elif opd == 3: 
             os.system('cls')
-            men = str(input("DIgite mensaje a desencriptar "))
-            xd = input("\nDigite la llave: ")
-            salida = aes.decrypt(xd, men)
-            print("Mensaje desencriptado: ", salida)
+            mencifrado = str(input("DIgite mensaje a descifrar: "))
+            key = input("\nDigite la llave: ")
+            exit = aes.decrypt(key, mencifrado)
+            print("Mensaje desencriptado: ", exit)
             time.sleep(1)
         elif opd == 4: 
             os.system('cls')
@@ -138,8 +150,14 @@ while True:
             descifrado = rsa.descifra_RSA(textoc, n, d)
             time.sleep(1)
         elif opd == 7: 
-            os.system('cls')
-            print('op2')
+            ct = input("Ingrese el mensaje cifrado: ")
+            p = int(input("ingrese la P: "))
+            q = int(input("ingrese la q: "))
+            key = int(input("ingrese la llave: "))
+            pt=ElGamal.decryption(ct,p,key,q)
+            d_msg=''.join(pt)
+            print("Mensaje Decifrado: ",d_msg)
+            time.sleep(1)
         else: 
             os.system('cls')
             print('¡¡¡Opcion Invalida!!!')
