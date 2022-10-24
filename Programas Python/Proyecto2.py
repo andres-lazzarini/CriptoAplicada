@@ -2,6 +2,7 @@ import os
 import time
 import rsa
 import des 
+import rc4
 
 while True:
 
@@ -45,7 +46,11 @@ while True:
 
         if opc == 1:
             os.system('cls')
-            print('op2')
+            msg = input("Ingrese un mensaje: ")
+            clave = input("Ingrese una clave: ")
+            cifrado  = rc4.cifra_rc4(msg, clave)
+            print(cifrado)
+            time.sleep(1)
         elif opc == 2: 
             os.system('cls')
             texto = str(input("Ingrese el texto a cifrar: "))
@@ -96,7 +101,11 @@ while True:
 
         if opd == 1:
             os.system('cls')
-            print('op2')
+            cmsg = input("Ingrese un mensaje: ")
+            clave = input("Ingrese una clave: ")
+            descifrado = rc4.descifra_rc4(cmsg, clave)
+            print(descifrado)
+            time.sleep(1)
         elif opd == 2: 
             os.system('cls')
             texto = str(input("Ingrese el texto a descifrar: "))
