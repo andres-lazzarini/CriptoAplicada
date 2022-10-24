@@ -87,12 +87,4 @@ def descifra_rc4(mensaje, clave):
         for i in range(len(palSplit)):
             resultado += chr(z[i])
 
-        return resultado
-
-msg = input("Ingrese un mensaje: ")
-clave = input("Ingrese una clave: ")
-cifrado  = cifra_rc4(msg, clave)
-print(cifrado)
-
-descifrado = descifra_rc4(cifrado, clave)
-print(descifrado)
+        return resultado    

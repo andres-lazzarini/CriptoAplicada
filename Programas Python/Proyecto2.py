@@ -25,7 +25,7 @@ while True:
     print('2. Descifrar')
     print('0. Salir')
 
-    op = int (input('Seleccione una opcion de las de arriba: '))
+    op = int(input('Seleccione una opcion de las de arriba: '))
 
     if op == 1: 
         os.system('cls')
@@ -42,7 +42,7 @@ while True:
         print('7. ElRamal')
         print('8. Diffie Hellman')
 
-        opc = int (input('Seleccione una opcion de las de arriba: '))
+        opc = int(input('Seleccione una opcion de las de arriba: '))
 
         if opc == 1:
             os.system('cls')
