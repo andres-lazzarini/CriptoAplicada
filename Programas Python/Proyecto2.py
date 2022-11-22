@@ -9,7 +9,7 @@ import random
 import Chacha
 import Salsa
 import DifieHelman
-
+ 
 while True:
 
     print('------------------------------------------------------')
