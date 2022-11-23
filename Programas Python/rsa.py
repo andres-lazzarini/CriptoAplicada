@@ -14,8 +14,8 @@ def isPrime(n):
 
 def Claves_RSA():
   ## Se buscan dos números p y q, diferentes y que sean primos
-  mi = 10
-  ma = 100
+  mi = 11
+  ma = 13
   val = False
   while val == False:
     p = randint(mi,ma)
